@@ -23,7 +23,7 @@ body {
   align-items: center;
 }
 
-.container {
+.main-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -111,7 +111,7 @@ body {
   animation: show 1s 3s ease forwards, fade-in 1s 3s ease, grow-right 1s 3s ease;
 }
 
-.name {
+.logo-name {
   visibility: hidden;
   font-size: 45px;
   margin-top: 20px;
