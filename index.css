@@ -1,0 +1,198 @@
+:root {
+  --blue: #2a64be;
+  --white: #fff;
+}
+
+@font-face {
+  font-family: volks;
+  src: url("./volks.otf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  font-family: volks;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.outer-circle {
+  width: 300px;
+  height: 300px;
+  padding: 20px;
+  background-color: var(--white);
+  border: 20px solid var(--blue);
+  border-radius: 50%;
+  animation: show 1s ease-in, fade-in 1s ease-in;
+}
+
+.inner-circle {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 50%;
+  background-color: var(--blue);
+  overflow: hidden;
+  mask-image: -webkit-radial-gradient(white, black);
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  animation: zoom-in 1s ease, rotate 1s 2s ease;
+}
+
+.v-shape {
+  visibility: hidden;
+  position: relative;
+  width: 120px;
+  height: 103px;
+  display: flex;
+  justify-content: center;
+  background-color: var(--white);
+  clip-path: polygon(0 0, 100% 0, 70% 100%, 30% 100%);
+}
+
+.v-shape::before {
+  content: "";
+  position: absolute;
+  visibility: hidden;
+  width: 120px;
+  height: 75px;
+  background-color: var(--blue);
+  clip-path: polygon(73% 0, 27% 0, 50% 100%);
+  animation: show 1s 3s ease forwards, fade-in 1s 3s ease, stretch 1s 3s ease;
+}
+
+.inner-circle .v-shape {
+  animation: show 1s 1s ease forwards, slide-down 1s 1s ease;
+}
+
+.w-shape .v-shape {
+  transform: rotate(180deg);
+  animation: show 1s 1s ease forwards, slide-up 1s 1s ease;
+}
+
+.w-shape::before,
+.w-shape::after {
+  content: "";
+  position: absolute;
+  visibility: hidden;
+  bottom: 14px;
+  height: 200px;
+  width: 31px;
+  height: 200px;
+  background-color: var(--white);
+}
+
+.w-shape::before {
+  left: 20px;
+  transform: rotate(-20deg);
+  animation: show 1s 3s ease forwards, fade-in 1s 3s ease, grow-left 1s 3s ease;
+}
+
+.w-shape::after {
+  right: 20px;
+  transform: rotate(20deg);
+  animation: show 1s 3s ease forwards, fade-in 1s 3s ease, grow-right 1s 3s ease;
+}
+
+.name {
+  visibility: hidden;
+  font-size: 45px;
+  margin-top: 20px;
+  animation: show 1s 3s ease forwards, fade-in 1s 3s ease;
+}
+
+@keyframes show {
+  0% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes zoom-in {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes stretch {
+  0% {
+    height: 0px;
+  }
+  100% {
+    height: 75px;
+  }
+}
+
+@keyframes slide-down {
+  0% {
+    transform: translateY(-103px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(103px) rotate(180deg);
+  }
+  100% {
+    transform: translateY(0) rotate(180deg);
+  }
+}
+
+@keyframes grow-left {
+  0% {
+    left: 30px;
+    bottom: 10px;
+    height: 0px;
+  }
+}
+
+@keyframes grow-right {
+  0% {
+    right: 30px;
+    bottom: 10px;
+    height: 0px;
+  }
+}
