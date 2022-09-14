@@ -4,6 +4,6 @@ This is a CSS-created digital graphical image of the [Volkswagen](https://www.vw
 
 View Live [Here](https://nwoye-ezekiel.github.io/CSS-Art-Volkswagen-Logo/)
 
-### Reference image
+### Reference Image
 
 ![Volkswagen-Logo](/Volkswagen-Logo.webp)
