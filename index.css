@@ -118,7 +118,7 @@ body {
 
 .logo-name {
   visibility: hidden;
-  font-size: 42px;
+  font-size: 45px;
   margin-top: 20px;
   animation: show 1s 3s ease forwards, fade-in 1s 3s ease;
 }
