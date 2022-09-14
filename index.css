@@ -120,7 +120,7 @@ body {
   visibility: hidden;
   font-size: 45px;
   margin-top: 20px;
-  animation: show 1s 3.3s ease forwards, fade-in 1s 3.3s ease;
+  animation: show 1s 3.4s ease forwards, fade-in 1s 3.4s ease;
 }
 
 @keyframes show {
